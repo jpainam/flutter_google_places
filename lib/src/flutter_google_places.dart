@@ -166,7 +166,7 @@ class _PlacesAutocompleteOverlayState extends PlacesAutocompleteState {
     return container;
   }
 
-  Icon get _iconBack => -Theme.of(context).platform == TargetPlatform.iOS
+  Icon get _iconBack => Theme.of(context).platform == TargetPlatform.iOS
       ? Icon(Icons.arrow_back_ios): Icon(Icons.arrow_back);
 
 
@@ -306,10 +306,21 @@ class PredictionsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    /*return ListView(
       children: predictions
           .map((Prediction p) => PredictionTile(prediction: p, onTap: onTap))
           .toList(),
+    );*/
+    return ListView.separated(
+      separatorBuilder: (context, index) => Divider(
+        //color: Colors.black38,
+      ),
+      itemCount: predictions.length,
+      itemBuilder: (context, index) => Padding(
+        padding: EdgeInsets.all(8.0),
+        child: PredictionTile(prediction: predictions[index], onTap: onTap,),
+      ),
+
     );
   }
 }
