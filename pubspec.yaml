@@ -6,13 +6,13 @@ homepage: https://github.com/lejard-h/flutter_google_places
 maintainer: Kev Morelli (@KevMorelli)
 
 environment:
-  sdk: ">=2.0.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  rxdart: ^0.22.0
-  google_maps_webservice: ^0.0.15
+  rxdart: ^0.24.1
+  google_maps_webservice: ^0.0.18
   http: ">=0.11.0 <1.0.0"
 
 dev_dependencies:
